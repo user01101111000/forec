@@ -1,0 +1,64 @@
+:root {
+  font-family: "Poppins", sans-serif;
+
+
+  --black-1: #262522;
+  --white-1: #F0EBE1;
+  --white-2: #FFFBF2;
+  --white-3: #E0DCD2;
+  --orange-1: #F29C33;
+  --orange-2: #EE6352;
+  --green-1: #9FDC26;
+  --blue-1: #C4E5FC;
+
+  --border-color: rgba(48, 46, 43, 0.3);
+
+  --image-text-color: #F0EBE1;
+}
+
+[data-theme="dark"] {
+  --black-1: #F0EBE1;
+  --white-1: #262522;
+  --white-2: #FFFBF2;
+  --white-3: #E0DCD2;
+  --orange-1: #F29C33;
+  --orange-2: #EE6352;
+  --green-1: #9FDC26;
+  --blue-1: #C4E5FC;
+
+  --border-color: rgba(240, 235, 225, 0.3);
+
+  --image-text-color: #F0EBE1;
+}
+
+.home_layout {
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  color: var(--black-1);
+  background-color: var(--white-1);
+
+  padding: 1rem 5%;
+
+  transition: all 0.3s ease-in-out;
+}
+
+::selection {
+  background-color: var(--orange-1);
+  color: var(--white-1);
+}
+
+//::-webkit-scrollbar {
+//  width: 8px;
+//  height: 8px;
+//}
+//
+//::-webkit-scrollbar-track {
+//  background-color: var(--white-1);
+//}

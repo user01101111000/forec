@@ -7,6 +7,10 @@ import "./scss/index.scss";
 
 createRoot(document.getElementById('root')!).render(
     <Providers>
-        <RouterProvider router={router}/>
+        <RouterProvider router={router} future={{
+            v7_startTransition: true
+        }}/>
     </Providers>
 )
+
+
