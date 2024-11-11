@@ -1,0 +1,88 @@
+@use "../utils/placeholders" as *;
+
+.food_card {
+  width: 100%;
+  min-height: 50dvh;
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  border-radius: 32px;
+
+  background-color: var(--white-2);
+
+  overflow: hidden;
+
+  figure {
+    width: 100%;
+    height: 50%;
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  .food_card_info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    color: var(--black-1);
+
+    .food_card_info_header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+
+      h1 {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+    }
+
+
+    .food_card_info_footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: clamp(0.5rem, 1.5vw, 1rem);
+
+
+      p {
+        font-size: clamp(0.6rem, 3vw, 1rem);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+
+      button {
+        @extend %btn;
+        text-transform: uppercase;
+        border: 0.5px solid var(--border-color);
+        color: var(--black-1);
+        font-weight: 500;
+        padding: clamp(0.6rem, 1.5vw, 1rem);
+        font-size: clamp(0.6rem, 1.5vw, 1rem);
+        background-color: transparent;
+      }
+    }
+
+  }
+
+}

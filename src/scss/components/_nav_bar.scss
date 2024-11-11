@@ -25,16 +25,6 @@
 
     cursor: pointer;
 
-    gap: 0.5rem;
-
-
-    h1 {
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      user-select: none;
-
-    }
   }
 
 
@@ -121,11 +111,6 @@
 
     .nav_bar_footer {
       button {
-        display: none;
-      }
-    }
-    .logo_container {
-      h1 {
         display: none;
       }
     }

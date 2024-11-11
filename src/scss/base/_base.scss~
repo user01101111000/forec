@@ -21,7 +21,7 @@
 [data-theme="dark"] {
   --black-1: #F0EBE1;
   --white-1: #262522;
-  --white-2: rgba(255, 150, 0, 0.47);
+  --white-2: rgba(255, 150, 0, 0.93);
   --white-3: #E0DCD2;
   --orange-1: #F29C33;
   --orange-2: #EE6352;

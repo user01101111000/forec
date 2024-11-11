@@ -4,7 +4,7 @@ import {IProvidersProps} from "../../types/components/components_types.ts";
 import {ThemeContextProvider} from "../../context/ThemeContext.tsx";
 
 
-const queryClient = new QueryClient(
+const queryClient: QueryClient = new QueryClient(
     {
         defaultOptions: {
             queries: {

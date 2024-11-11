@@ -22,7 +22,6 @@ const Navbar: FC = () => {
                 <img src={logo} alt="logo"/>
             </figure>
 
-            <h1>Recp</h1>
         </div>
 
 
