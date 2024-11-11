@@ -1,0 +1,12 @@
+@use "../utils/placeholders" as *;
+
+.swiper {
+  height: 100%;
+  width: 100%;
+  user-select: none;
+}
+
+.swiper-slide {
+ height: 100%;
+  width: 100%;
+}

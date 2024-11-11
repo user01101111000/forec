@@ -1,8 +1,8 @@
 @use "../utils/placeholders" as *;
 
-.food_card {
+.recipe_card{
   width: 100%;
-  min-height: 50dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -14,9 +14,9 @@
 
   overflow: hidden;
 
-  figure {
+  .image_wrapper {
     width: 100%;
-    height: 50%;
+    height: 50% !important;
 
 
     img {
@@ -35,10 +35,11 @@
     padding: 1.5rem;
     color: var(--black-1);
 
+    gap: 1rem;
     position: relative;
 
 
-    figure {
+    .vegan_icon_wrapper {
       position: absolute;
       top: -3em;
       right: 2rem;
@@ -54,13 +55,13 @@
 
 
       h1 {
-        font-size: clamp(1rem, 3vw, 1.5rem);
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
         font-weight: 500;
         text-transform: uppercase;
       }
 
       h2 {
-        font-size: clamp(0.8rem, 3vw, 1rem);
+        font-size: clamp(0.8rem, 1vw, 1rem);
         font-weight: 300;
         line-height: 1.5;
       }
@@ -72,12 +73,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
 
-      gap: clamp(0.5rem, 1.5vw, 1rem);
+      gap: 1rem;
 
 
       p {
-        font-size: clamp(0.6rem, 3vw, 1rem);
+        font-size: clamp(0.8rem, 1vw, 1rem);
         font-weight: 300;
         line-height: 1.5;
       }
@@ -89,12 +91,13 @@
         border: 0.5px solid var(--border-color);
         color: var(--black-1);
         font-weight: 500;
-        padding: clamp(0.6rem, 1.5vw, 1rem);
-        font-size: clamp(0.6rem, 1.5vw, 1rem);
+        padding: clamp(0.6rem, 1vw, 0.8rem);
+        font-size: clamp(0.8rem, 1vw, 0.8rem);
         background-color: transparent;
+        transition: all 0.3s ease-in-out;
+
       }
     }
 
   }
-
 }

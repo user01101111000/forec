@@ -7,5 +7,4 @@
 @forward "components/home/explore";
 @forward "components/home/featured";
 @forward "components/home/recipes";
-@forward "components/recipe_card";
 @forward "components/slider";

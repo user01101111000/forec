@@ -9,8 +9,8 @@
   grid-template-columns: repeat(2, 1fr);
 
   border-radius: 32px;
-  padding: 2rem ;
-  background-color: var(--blue-2);
+  padding: 2rem;
+  
   gap: 5rem;
 
 
