@@ -53,7 +53,7 @@ const Navbar: FC = () => {
 
             <button>subscribe</button>
 
-            <div className="nav_bar_icon hamburger_menu_icon" onClick={(): void => setShowMenu(!showMenu)}>
+            <div className="nav_bar_icon hamburger_menu_icon" onClick={() => setShowMenu(!showMenu)}>
                 <RxHamburgerMenu/>
             </div>
 

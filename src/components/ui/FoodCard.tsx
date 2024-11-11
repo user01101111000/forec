@@ -1,4 +1,5 @@
 import {FC} from "react";
+import vegan_icon from "../../assets/icons/vegan_icon.svg";
 
 const FoodCard: FC = () => {
     return <article className="food_card">
@@ -11,6 +12,11 @@ const FoodCard: FC = () => {
 
 
         <div className="food_card_info">
+
+            <figure>
+                <img src={vegan_icon} alt="vegan icon"/>
+            </figure>
+
             <div className="food_card_info_header">
                 <h1>Savory Herb-Infused Chicken</h1>
 

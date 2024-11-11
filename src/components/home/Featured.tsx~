@@ -20,11 +20,7 @@ const Featured: FC = () => {
         <div className="swiper_wrapper">
 
             <FoodCard/>
-            <FoodCard/>
-            <FoodCard/>
-
-
-
+            <FoodCard/> <FoodCard/>
 
 
         </div>
