@@ -10,7 +10,7 @@
   --orange-2: #EE6352;
   --green-1: #9FDC26;
   --blue-1: #C4E5FC;
-  --blue-2: rgba(255, 152, 0, 0.27);
+  --blue-2: rgba(255, 152, 0, 0.91);
 
   --border-color: rgba(48, 46, 43, 0.3);
 
@@ -43,7 +43,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 1.5rem;
+  gap: 5rem;
 
   color: var(--black-1);
   background-color: var(--white-1);
