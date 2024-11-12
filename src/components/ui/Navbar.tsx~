@@ -24,7 +24,7 @@ const Navbar: FC = () => {
     const {theme, changeTheme} = useTheme()
 
     const nav_links_components = nav_lilnks.map((link: { title: string, to: string }) =>
-        <NavLink key={link.to} to={link.to} onClick={() => setShowMenu((false))}>{link.title}</NavLink>
+        <NavLink key={link.to} to={link.to}>{link.title}</NavLink>
     )
 
     return <>

@@ -45,6 +45,6 @@
 
   @include respond(phone){
     background-size: cover;
-    background-position: revert;
+    background-position: center;
   }
 }

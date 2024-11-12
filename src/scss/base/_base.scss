@@ -3,7 +3,7 @@
 
 
   --black-1: #262522;
-  --white-1: #F0EBE1;
+  --white-1: rgba(240, 235, 225);
   --white-2: #FFFBF2;
   --white-3: #E0DCD2;
   --orange-1: #F29C33;
@@ -38,7 +38,6 @@
 .home_layout {
   min-height: 100dvh;
   width: 100%;
-  overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
@@ -51,6 +50,8 @@
   padding: 1rem 5%;
 
   transition: all 0.3s ease-in-out;
+
+
 }
 
 ::selection {
