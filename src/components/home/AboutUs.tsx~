@@ -1,0 +1,6 @@
+import {FC} from "react";
+
+const AboutUs: FC = () => {
+
+    return <section className="about_us_home">AboutUs</section>
+}
