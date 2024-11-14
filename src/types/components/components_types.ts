@@ -5,8 +5,10 @@ export type IProvidersProps = {
 }
 
 export interface IFoodCardProps {
-    image: string,
-    title: string,
-    description: string,
-    additional: string
+    image: string | null,
+    title: string | null,
+    description: string | null,
+    area: string | null,
+    vegan: boolean | null,
+    video : string | null
 }

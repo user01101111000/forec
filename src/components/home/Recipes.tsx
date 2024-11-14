@@ -1,12 +1,26 @@
-import {FC} from "react";
-import {datas} from "./Slider.tsx";
-import {IFoodCardProps} from "../../types/components/components_types.ts";
+import {FC, useEffect, useState} from "react";
 import RecipeCard from "../ui/RecipeCard.tsx";
 import useGetAllCategories from "../../hooks/service/useGetAllCategories.tsx";
-import {ICategory} from "../../types/data/data_types.ts";
+import {CategoryMeal, ICategory, ICategoryMealResponse} from "../../types/data/data_types.ts";
+import useGetMealsByCategory from "../../hooks/service/useGetMealsByCategory.tsx";
 
 
 const Recipes: FC = () => {
+
+    const [loadCount, setLoadCount] = useState<number>(8);
+    const [cards, setCards] = useState<ICategoryMealResponse | null>(null);
+
+    const [selectedCategory, setSelectedCategory] = useState<string>("Beef")
+
+    const {mutateAsync, isPending} = useGetMealsByCategory()
+
+
+    useEffect(() => {
+
+        mutateAsync(selectedCategory).then((data: ICategoryMealResponse) => {
+            setCards(data);
+        })
+    }, [selectedCategory])
 
 
     const {data, isLoading, isError, error} = useGetAllCategories();
@@ -27,14 +41,26 @@ const Recipes: FC = () => {
                                                                                        document.querySelectorAll(".category_label").forEach((el: Element) => el.classList.remove("active_category"))
                                                                                        e.currentTarget.classList.add("active_category")
 
+                                                                                       setSelectedCategory(category);
+                                                                                       setLoadCount(8)
+
                                                                                    }}>{category}</p>);
 
 
-    const recipe_cards = datas.map((data: IFoodCardProps, index: number) => <RecipeCard key={index} image={data.image}
-                                                                                        title={data.title}
-                                                                                        description={data.description}
-                                                                                        additional={data.additional}/>)
+    console.log(cards)
 
+
+    const recipe_cards = cards?.meals.map((meal: CategoryMeal) => <RecipeCard key={meal.idMeal}
+                                                                              data={{
+                                                                                  "image": meal?.strMealThumb,
+                                                                                  "title": meal?.strMeal,
+                                                                                  description: "",
+                                                                                  "vegan": false,
+                                                                                  "video": "",
+                                                                                  area: "",
+                                                                              }} recipe={false}
+        />
+    ).slice(0, loadCount)
     return <section className="recipes">
 
         <div className="recipes_header">
@@ -58,9 +84,18 @@ const Recipes: FC = () => {
 
 
         <div className="recipes_cards">
-            {recipe_cards}
+            {isPending ? <h1>Loading</h1> : recipe_cards}
 
         </div>
+
+        {loadCount < (cards?.meals.length ?? 0) && <button className="load_more_button" onClick={() => {
+
+            if (loadCount < cards!.meals.length) setLoadCount(loadCount + 8)
+
+            else setLoadCount(cards!.meals.length)
+
+        }}>Load More
+        </button>}
     </section>
 }
 

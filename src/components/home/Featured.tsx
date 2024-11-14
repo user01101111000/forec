@@ -4,10 +4,20 @@ import {BsArrowRightCircle} from "react-icons/bs";
 import Slider from "./Slider.tsx";
 import {useRef} from "react";
 import {SwiperRef} from "swiper/react";
+import useGetFeaturedMeals from "../../hooks/service/useGetFeaturedMeals.tsx";
 
 
 const Featured: FC = () => {
-    const swiperRef: MutableRefObject<SwiperRef | null> = useRef<SwiperRef | null>(null)
+    const swiperRef: MutableRefObject<SwiperRef | null> = useRef<SwiperRef | null>(null);
+
+
+    const {data, isLoading, isError, error} = useGetFeaturedMeals()
+
+
+    if (isLoading) return <h1>Loading</h1>
+
+    if (isError) return <h1>{error.message}</h1>
+
 
     return <article className="featured">
 
@@ -26,7 +36,7 @@ const Featured: FC = () => {
 
 
         <div className="swiper_wrapper">
-            <Slider swiperRef={swiperRef}/>
+            <Slider datas={data ?? []} swiperRef={swiperRef}/>
 
         </div>
 

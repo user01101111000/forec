@@ -5,59 +5,32 @@ import 'swiper/css';
 // @ts-ignore
 import 'swiper/css/navigation';
 import {Navigation} from "swiper/modules";
-import {IFoodCardProps} from "../../types/components/components_types.ts";
 import RecipeCard from "../ui/RecipeCard.tsx";
+import {Meal} from "../../types/data/data_types.ts";
 
 
-export const datas: IFoodCardProps[] = [
-    {
-        image: "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-        title: "Savory Herb-Infused Chicken",
-        description: "Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken",
-        additional: "Italian, Vegeterian",
-    },
-    {
-        image: "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-        title: "Savory Herb-Infused Chicken",
-        description: "Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken",
-        additional: "Italian, Vegeterian",
-
-    },
-    {
-        image: "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-        title: "Savory Herb-Infused Chicken",
-        description: "Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken",
-        additional: "Italian, Vegeterian",
-    },
-    {
-        image: "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-        title: "Savory Herb-Infused Chicken",
-        description: "Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken",
-        additional: "Italian, Vegeterian",
-    },
-    {
-        image: "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-        title: "Savory Herb-Infused Chicken",
-        description: "Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken",
-        additional: "Italian, Vegeterian",
-    },
-    {
-        image: "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-        title: "Savory Herb-Infused Chicken",
-        description: "Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken",
-        additional: "Italian, Vegeterian",
-    },
-]
-
-
-const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null> }> = (props: {
-    swiperRef: MutableRefObject<SwiperRef | null>
+const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, datas: Meal[] }> = (props: {
+    swiperRef: MutableRefObject<SwiperRef | null>,
+    datas: Meal[]
 }) => {
 
-    const slides = datas.map((data: IFoodCardProps, index: number) => <SwiperSlide
-        key={index}>
+    const slides = props.datas.map((data: Meal) => <SwiperSlide
+        key={data.idMeal}>
 
-        <RecipeCard image={data.image} title={data.title} description={data.description} additional={data.additional}/>
+        <RecipeCard data={
+            {
+                "image": data?.strMealThumb,
+                "title": data?.strMeal,
+                description: data?.strInstructions,
+                "vegan": data.strCategory === "Vegan" || data.strCategory === "Vegetarian"
+                    ? true
+                    : false,
+                "video": data?.strYoutube,
+                area: data?.strArea
+
+            }
+
+        } recipe={true}/>
 
     </SwiperSlide>)
 
