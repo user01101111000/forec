@@ -16,6 +16,8 @@
 
   --image-text-color: #F0EBE1;
   --hover-color-1: #F0EBE1;
+
+  --recipe-card-bg: var(--white-2);
 }
 
 [data-theme="dark"] {
@@ -33,6 +35,8 @@
 
   --image-text-color: #F0EBE1;
   --hover-color-1: #F29C33;
+
+  --recipe-card-bg: #13181D;
 }
 
 .home_layout {
@@ -61,7 +65,7 @@
 
 ::-webkit-scrollbar {
   width: 5px;
-  background-color: var(--black-1) !important;
+  background-color: var(--black-1);
 }
 
 ::-webkit-scrollbar-thumb {

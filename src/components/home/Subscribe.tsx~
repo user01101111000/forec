@@ -7,11 +7,14 @@ const Subscribe: FC = () => {
     function form_submit(e: FormEvent) {
         e.preventDefault();
 
-        if (email_ref.current && email_ref.current.value) console.log(email_ref.current.value)
+        if (email_ref.current && email_ref.current.value) {
+            console.log(email_ref.current.value);
+            email_ref.current.value = "";
+        }
     }
 
 
-    return <section className="subscribe">
+    return <section className="subscribe" id="subscribe">
 
         <h1>Join the fun Subscribe now!</h1>
 

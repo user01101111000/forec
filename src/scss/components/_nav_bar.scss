@@ -23,12 +23,15 @@
 
     background-color: var(--white-1);
 
+
     a {
       font-size: 2rem;
       position: relative;
       color: var(--black-1);
+
       font-weight: 600;
       text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
 
 
     }

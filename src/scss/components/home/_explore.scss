@@ -10,10 +10,10 @@
 
   border-radius: 32px;
   padding: 2rem;
-border: 0.5px solid var(--border-color);
+
   gap: 5rem;
 
-
+  background-color: var(--recipe-card-bg);
 
   .explore_title {
 
@@ -98,13 +98,13 @@ border: 0.5px solid var(--border-color);
 
 
       &:hover {
-        border-color: var(--hover-color-1)
+        border-color: var(--orange-2)
 
 
       }
 
       &:hover h1 {
-        color: var(--hover-color-1);
+        color: var(--orange-2);
       }
 
     }

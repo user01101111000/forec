@@ -4,10 +4,13 @@ const Subscribe: FC = () => {
 
     const email_ref = useRef<HTMLInputElement | null>(null)
 
-    function form_submit(e: FormEvent) {
+    function form_submit(e: FormEvent): void {
         e.preventDefault();
 
-        if (email_ref.current && email_ref.current.value) console.log(email_ref.current.value)
+        if (email_ref.current && email_ref.current.value) {
+            console.log(email_ref.current.value);
+            email_ref.current.value = "";
+        }
     }
 
 

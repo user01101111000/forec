@@ -27,6 +27,7 @@ const Navbar: FC = () => {
         <NavLink key={link.to} to={link.to} onClick={() => setShowMenu((false))}>{link.title}</NavLink>
     )
 
+
     return <>
         <header className="nav_bar">
 

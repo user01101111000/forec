@@ -2,6 +2,16 @@
 @use "../../scss/utils/mixins" as *;
 
 
+@keyframes example {
+  from {
+    translateX: -100%;
+  }
+
+  to {
+    translateX: 0%;
+  }
+}
+
 .second_navbar {
   display: none;
 
@@ -23,12 +33,15 @@
 
     background-color: var(--white-1);
 
+
     a {
       font-size: 2rem;
       position: relative;
       color: var(--black-1);
+
       font-weight: 600;
       text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
 
 
     }
@@ -37,7 +50,7 @@
       position: absolute;
       font-size: 2rem;
       top: 0.5rem;
-      left: 1rem;
+      left: 0.5rem;
     }
 
 
@@ -97,6 +110,8 @@
       font-weight: 600;
       text-transform: uppercase;
       font-size: clamp(0.8rem, 1.5vw, 1rem);
+
+   
 
 
       &::after {

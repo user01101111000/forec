@@ -2,10 +2,22 @@ import {FC} from "react";
 import {datas} from "./Slider.tsx";
 import {IFoodCardProps} from "../../types/components/components_types.ts";
 import RecipeCard from "../ui/RecipeCard.tsx";
+import useGetAllCategories from "../../hooks/service/useGetAllCategories.tsx";
+import {ICategory} from "../../types/data/data_types.ts";
 
-const categories: string[] = ["All", "Breakfast", "Lunch", "Dinner", "Snacks", "Desserts", "Drinks"];
-//active_category
+
 const Recipes: FC = () => {
+
+
+    const {data, isLoading, isError, error} = useGetAllCategories();
+
+
+    if (isLoading) return <h1>Loading</h1>
+
+    if (isError) return <h1>{error.message}</h1>
+
+
+    const categories: string[] = data!.categories.map((category: ICategory): string => category.strCategory)
 
 
     const category_labels = categories.map((category: string, index: number) => <p key={index}
@@ -16,6 +28,7 @@ const Recipes: FC = () => {
                                                                                        e.currentTarget.classList.add("active_category")
 
                                                                                    }}>{category}</p>);
+
 
     const recipe_cards = datas.map((data: IFoodCardProps, index: number) => <RecipeCard key={index} image={data.image}
                                                                                         title={data.title}

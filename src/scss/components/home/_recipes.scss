@@ -72,7 +72,7 @@
         border: 0.5px solid var(--border-color);
         cursor: pointer;
         user-select: none;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.2s ease-in-out;
       }
 
       .active_category {
@@ -89,7 +89,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-    gap: 2rem;
+    gap: 1rem;
   }
 
 }

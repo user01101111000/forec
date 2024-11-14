@@ -6,8 +6,7 @@
 
   border: 0.5px solid var(--border-color);
   border-radius: 32px;
-
-  padding: 1rem;
+  padding: 2rem;
 
 
   display: grid;
@@ -81,10 +80,16 @@
     border-radius: 32px;
     overflow: hidden;
 
+
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        scale: 1.1;
+      }
 
     }
   }

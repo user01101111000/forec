@@ -4,6 +4,7 @@ import useTheme from "../hooks/common/useTheme.tsx";
 import Navbar from "../components/ui/Navbar.tsx";
 import Footer from "../components/ui/Footer.tsx";
 
+
 const HomeLayout: FC = () => {
 
     const {theme} = useTheme()
