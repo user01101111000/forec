@@ -16,7 +16,7 @@ const Featured: FC = () => {
 
 
     if (isLoading) return <section className="featured">
-        <LoadingContainer heightC={"300px"}/>
+        <LoadingContainer heightC={"100%"}/>
     </section>
 
     if (isError) return <h1>{error.message}</h1>

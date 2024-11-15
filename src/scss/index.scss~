@@ -3,6 +3,7 @@
 @forward "base/base";
 @forward "containers/home";
 @forward "components/nav_bar";
+@forward "components/footer";
 @forward "components/home/hero";
 @forward "components/home/explore";
 @forward "components/home/featured";
@@ -11,3 +12,4 @@
 @forward "components/slider";
 @forward "components/home/about_us_home";
 @forward "components/home/subscribe";
+@forward "components/skeleton";

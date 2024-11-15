@@ -2,7 +2,6 @@
 
 .featured {
 
-  min-height: 50dvh;
   width: 100%;
   border: 0.2px solid var(--border-color);
   border-radius: 32px;

@@ -109,7 +109,7 @@
   .img3 {
     grid-area: d;
 
-    img {
+    img{
       object-position: top center;
     }
 

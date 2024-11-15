@@ -3,9 +3,15 @@ import RecipeCard from "../ui/RecipeCard.tsx";
 import useGetAllCategories from "../../hooks/service/useGetAllCategories.tsx";
 import {CategoryMeal, ICategory, ICategoryMealResponse} from "../../types/data/data_types.ts";
 import useGetMealsByCategory from "../../hooks/service/useGetMealsByCategory.tsx";
+import Skeleton from "../ui/Skeleton.tsx";
+import LoadingContainer from "../ui/LoadingContainer.tsx";
 
 
 const Recipes: FC = () => {
+
+    const skeleton_cards = Array.from({length: 8}, (_, i: number) => (
+        <Skeleton height={"clamp(150px, 40vw, 200px)"} width={"100%"} borderRadius={"32px"} key={i}/>));
+
 
     const [loadCount, setLoadCount] = useState<number>(8);
     const [cards, setCards] = useState<ICategoryMealResponse | null>(null);
@@ -26,7 +32,9 @@ const Recipes: FC = () => {
     const {data, isLoading, isError, error} = useGetAllCategories();
 
 
-    if (isLoading) return <h1>Loading</h1>
+    if (isLoading) return <section className="recipes">
+        <LoadingContainer/>
+    </section>
 
     if (isError) return <h1>{error.message}</h1>
 
@@ -61,7 +69,7 @@ const Recipes: FC = () => {
                                                                               }} recipe={false}
         />
     ).slice(0, loadCount)
-    return <section className="recipes">
+    return <section className="recipes" id="recipes">
 
         <div className="recipes_header">
 
@@ -84,7 +92,7 @@ const Recipes: FC = () => {
 
 
         <div className="recipes_cards">
-            {isPending ? <h1>Loading</h1> : recipe_cards}
+            {isPending ? skeleton_cards : recipe_cards}
 
         </div>
 

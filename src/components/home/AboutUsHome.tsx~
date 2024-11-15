@@ -31,7 +31,7 @@ const AboutUsHome: FC = () => {
 
         <figure className="img img3">
             <img
-                src="https://c1.wallpaperflare.com/preview/345/487/799/kitchen-cook-flame-food.jpg"
+                src="https://images.ctfassets.net/pdf29us7flmy/3CrPYGKnMTIY5DbmhrIvos/ae6eebbeced49c8ec47223aeb2e0e493/GettyImages-1062570434-Optimized.jpg?w=720&q=100&fm=jpg"
                 alt="img3"/>
         </figure>
 

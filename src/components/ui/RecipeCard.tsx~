@@ -40,7 +40,7 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean }> = (props: {
         <figure className="image_wrapper">
             {loadImage ? <img
                 src={props.data.image ?? ""}
-                alt={props.data.title ?? ""}/> : <Skeleton />}
+                alt={props.data.title ?? ""}/> : <Skeleton width={"100px"} height={"100px"}/>}
         </figure>
 
 

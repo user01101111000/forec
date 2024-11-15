@@ -18,6 +18,7 @@
   --hover-color-1: #F0EBE1;
 
   --recipe-card-bg: var(--white-2);
+  --skeleton-color: rgba(242, 156, 51, 0.77);
 }
 
 [data-theme="dark"] {
@@ -37,6 +38,7 @@
   --hover-color-1: #F29C33;
 
   --recipe-card-bg: #13181D;
+  --skeleton-color: rgba(255, 255, 255, 0.05);
 }
 
 .home_layout {
