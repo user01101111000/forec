@@ -1,0 +1,7 @@
+import {FC} from "react";
+
+const CookingTipsContainer: FC = () => {
+    return <section className="cooking_tips_container">Cooking tips</section>
+}
+
+export default CookingTipsContainer;

@@ -29,7 +29,8 @@ const Navbar: FC = () => {
             setShowMenu((false))
 
 
-            if (location.pathname == link.to) window.scrollTo(0, 0)
+            if (location.pathname == link.to)
+                window.scrollTo(0, 0)
 
 
         }}>{link.title}</NavLink>

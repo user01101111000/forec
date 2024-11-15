@@ -1,0 +1,8 @@
+import {FC} from "react";
+
+const AboutUsContainer: FC = () => {
+
+    return <section className="about_us_container">About us</section>
+}
+
+export default AboutUsContainer;

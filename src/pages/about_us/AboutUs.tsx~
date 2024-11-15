@@ -1,0 +1,8 @@
+import {FC} from "react";
+
+const AboutUs: FC = () => {
+
+    return <AboutUsContainer/>
+}
+
+export default AboutUs;
