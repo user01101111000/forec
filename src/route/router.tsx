@@ -8,7 +8,9 @@ const router = createBrowserRouter(routes, {
         v7_fetcherPersist: true,
         v7_normalizeFormMethod: true,
         v7_skipActionErrorRevalidation: true
-    }
+    },
+
+
 });
 
 

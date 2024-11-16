@@ -20,7 +20,7 @@ const Detail: FC = () => {
     // @ts-ignore
     const ingredients: string[] = Array.from({length: 20}, (_: unknown, i: number): string[] => data![`strIngredient${i + 1}`]).filter(Boolean);
     // @ts-ignore
-    const measures: string[] = Array.from({length: 20}, (_: unknown, i: number): string[] => data![`strMeasure${i + 1}`]).filter((x: string) => Boolean(x) && x != " ");
+    const measures: string[] = Array.from({length: 20}, (_: unknown, i: number): string[] => data![`strMeasure${i + 1}`]).filter(Boolean);
 
 
     return <DetailContainer data={data!} ingredients={ingredients} measures={measures}/>

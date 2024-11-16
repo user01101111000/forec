@@ -1,36 +1,26 @@
 import {FC} from "react";
-import {useParams} from "react-router-dom";
 import {motion} from "framer-motion";
-import useGetMealByID from "../../hooks/service/useGetMealByID.tsx";
-import LoadingContainer from "../../components/ui/LoadingContainer.tsx";
 import DetailHeader from "../../components/detail/DetailHeader.tsx";
+import DetailInfo from "../../components/detail/DetailInfo.tsx";
+import {DetailContainerProps} from "../../types/components/components_types.ts";
 
 
-const DetailContainer: FC = () => {
-
-    const {id} = useParams();
-
-    const {data, isLoading, isError, error} = useGetMealByID(parseInt(id as string));
-
-
-    if (isLoading) return <LoadingContainer/>
-
-    if (isError) return <h1>{error.message}</h1>
-
-
-    // @ts-ignore
-    const ingredients = Array.from({length: 20}, (_, i) => data![`strIngredient${i + 1}`]).filter(Boolean);
+const DetailContainer: FC<DetailContainerProps> = (props: DetailContainerProps) => {
 
 
     return <motion.section initial={{opacity: 0}} animate={{opacity: 1}} className="detail_meal">
 
-        <DetailHeader area={data?.strArea ?? ""} video={data?.strYoutube ?? ""} ingredient_count={ingredients.length}
-                      title={data?.strMeal ?? ""}/>
+        <DetailHeader area={props.data?.strArea ?? ""} video={props.data?.strYoutube ?? ""}
+                      ingredient_count={props.ingredients.length}
+                      title={props.data?.strMeal ?? ""}/>
 
 
         <figure className="main_meal_image">
-            <img src={data?.strMealThumb ?? ""} alt={data?.strMeal}/>
+            <img src={props.data?.strMealThumb ?? ""} alt={props.data?.strMeal}/>
         </figure>
+
+        <DetailInfo ingredients={props.ingredients} measures={props.measures}
+                    instructions={props.data?.strInstructions ?? ""} youtube={props?.data?.strYoutube ?? ""}/>
 
 
     </motion.section>
