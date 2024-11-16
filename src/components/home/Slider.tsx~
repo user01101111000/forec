@@ -17,9 +17,20 @@ const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, datas: Meal[] 
     const slides = props.datas.map((data: Meal) => <SwiperSlide
         key={data.idMeal}>
 
-        <RecipeCard image={data?.strMealThumb} title={data?.strMeal} description={data?.strInstructions}
-                    area={data?.strArea}
-                    vegan={data.strCategory === "Vegan" || data.strCategory === "Vegetarian" ? true : false} video={data.strYoutube} recipe={true}/>
+        <RecipeCard data={
+            {
+                "image": data?.strMealThumb,
+                "title": data?.strMeal,
+                description: data?.strInstructions,
+                "vegan": data.strCategory === "Vegan" || data.strCategory === "Vegetarian"
+                    ? true
+                    : false,
+                "video": data?.strYoutube,
+                area: data?.strArea
+
+            }
+
+        } recipe={true}/>
 
     </SwiperSlide>)
 

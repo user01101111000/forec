@@ -160,7 +160,7 @@
   @include respond(tab-port) {
 
     .nav_bar_footer {
-      a {
+      button {
         display: none;
       }
     }

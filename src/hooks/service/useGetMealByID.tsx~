@@ -1,0 +1,14 @@
+import {useQuery, UseQueryResult} from "@tanstack/react-query";
+import {ICategoryResponse} from "../../types/data/data_types.ts";
+import get_one_meal_by_id from "../../service/meals/get_one_meal_by_id.ts";
+
+
+const useGetMealByID: (id : string) => UseQueryResult<ICategoryResponse> = (id : string): UseQueryResult<ICategoryResponse> => {
+    return useQuery({
+        queryKey: ['meal',id],
+        queryFn: get_one_meal_by_id,
+        staleTime: 300000,
+        retry: 1,
+    })
+}
+export default useGetMealByID

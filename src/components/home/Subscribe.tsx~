@@ -4,7 +4,7 @@ const Subscribe: FC = () => {
 
     const email_ref = useRef<HTMLInputElement | null>(null)
 
-    function form_submit(e: FormEvent) {
+    function form_submit(e: FormEvent): void {
         e.preventDefault();
 
         if (email_ref.current && email_ref.current.value) {
@@ -14,7 +14,7 @@ const Subscribe: FC = () => {
     }
 
 
-    return <section className="subscribe" id="subscribe">
+    return <section className="subscribe">
 
         <h1>Join the fun Subscribe now!</h1>
 

@@ -69,7 +69,7 @@ const Recipes: FC = () => {
                                                                               }} recipe={false}
         />
     ).slice(0, loadCount)
-    return <section className="recipes" id="#recipes">
+    return <section className="recipes" id="recipes">
 
         <div className="recipes_header">
 

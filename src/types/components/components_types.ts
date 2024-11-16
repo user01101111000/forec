@@ -5,6 +5,7 @@ export type IProvidersProps = {
 }
 
 export interface IFoodCardProps {
+    id: string | null,
     image: string | null,
     title: string | null,
     description: string | null,
@@ -26,4 +27,11 @@ export type LoadingContainerProps = {
     widthC?: string,
     heightI?: string,
     widthI?: string,
+}
+
+export type DetailHeaderProps = {
+    title: string,
+    ingredient_count: number,
+    area: string,
+    video: string,
 }

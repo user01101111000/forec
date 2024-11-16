@@ -4,12 +4,15 @@ import {IFoodCardProps} from "../../types/components/components_types.ts";
 import {FaCirclePlay} from "react-icons/fa6";
 import {IoMdArrowRoundForward} from "react-icons/io";
 import Skeleton from "./Skeleton.tsx";
+import {NavigateFunction, useNavigate} from "react-router-dom";
 
 
 const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean }> = (props: {
     data: IFoodCardProps,
     recipe: boolean
 }) => {
+
+    const navigate: NavigateFunction = useNavigate();
 
 
     const [loadImage, setLoadImage] = useState<boolean>(false)
@@ -29,10 +32,14 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean }> = (props: {
     }, [])
 
 
-    return props.recipe ? <div className="recipe_card">
+    return props.recipe ? <div className="recipe_card" onClick={() => {
+        navigate(`/detail/${props.data.id}`)
+    }}>
 
         {props.data.video &&
-            <a href={props.data.video} target="_blank" className="video_area"><FaCirclePlay
+            <a href={props.data.video} target="_blank" className="video_area" onClick={(e) => {
+                e.stopPropagation();
+            }}><FaCirclePlay
                 className="play_icon"/> Watch
                 video</a>}
 
@@ -40,7 +47,7 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean }> = (props: {
         <figure className="image_wrapper">
             {loadImage ? <img
                 src={props.data.image ?? ""}
-                alt={props.data.title ?? ""}/> : <Skeleton />}
+                alt={props.data.title ?? ""}/> : <Skeleton/>}
         </figure>
 
 
@@ -66,7 +73,9 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean }> = (props: {
         </div>
 
 
-    </div> : <div className="recipe_card_2">
+    </div> : <div className="recipe_card_2" onClick={() => {
+        navigate(`/detail/${props.data.id}`)
+    }}>
 
         <figure className="image_wrapper_2">
             <img
