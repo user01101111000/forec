@@ -1,4 +1,4 @@
-import {FC, JSX, useEffect} from "react";
+import {FC, useEffect} from "react";
 import {Outlet, useLocation} from "react-router-dom";
 import useTheme from "../hooks/common/useTheme.tsx";
 import Navbar from "../components/ui/Navbar.tsx";

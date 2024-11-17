@@ -1,0 +1,108 @@
+@use "../utils/mixins" as *;
+
+.cooking_hero {
+  width: 100%;
+  min-height: 70dvh;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  align-items: center;
+
+  grid-template-areas:
+          "a b"
+          "c c";
+
+  gap: 1rem;
+
+  .cooking_hero_title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 500;
+    grid-area: a;
+
+
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
+
+  .cooking_hero_description {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.5;
+
+    grid-area: b;
+    @include respond(tab-port) {
+      text-align: center;
+    }
+
+  }
+
+  .cooking_hero_tips_area {
+    border: 0.5px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 24px;
+    grid-area: c;
+
+
+    display: flex;
+    gap: 1rem;
+
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .cooking_hero_tip {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 400px;
+
+
+
+      .cooking_hero_tip_content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        h1 {
+          font-size: clamp(1rem, 2vw, 1.1rem);
+          color: var(--orange-2);
+          font-weight: 500;
+          font-style: italic;
+        }
+
+        p {
+          font-size: clamp(0.8rem, 2vw, 0.9rem);
+          line-height: 1.5;
+          font-weight: 300;
+
+        }
+      }
+
+      @include respond(phone){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+      }
+    }
+
+
+  }
+
+  @include respond(tab-port) {
+
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+            "a"
+            "b"
+            "c";
+  }
+
+
+}

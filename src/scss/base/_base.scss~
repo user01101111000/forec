@@ -59,7 +59,7 @@
 
   padding: 1rem 5%;
 
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 
 
 }

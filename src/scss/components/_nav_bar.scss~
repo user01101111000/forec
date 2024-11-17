@@ -228,7 +228,6 @@
               background-color: var(--orange-1);
               padding: 0.3rem 0.4rem;
               border-radius: 12px;
-              font-weight: 500;
               color: var(--white-1);
             }
           }

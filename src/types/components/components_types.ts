@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Meal} from "../data/data_types.ts";
 
+
 export type IProvidersProps = {
     children: React.ReactNode
 }
@@ -48,4 +49,8 @@ export type DetailInfoProps = {
     measures: string[],
     instructions: string,
     youtube: string
+}
+
+export type SearchBarProps = {
+    setShowSearch: React.Dispatch<React.SetStateAction<boolean>>
 }

@@ -1,4 +1,4 @@
-import {FC, JSX, MutableRefObject, useRef, useState} from "react";
+import {FC, JSX, useState} from "react";
 import logo from "../../assets/images/logo.svg";
 import {Location, NavLink, useLocation} from "react-router-dom";
 import {LuSearch} from "react-icons/lu";
@@ -8,6 +8,7 @@ import {RxHamburgerMenu} from "react-icons/rx";
 import useTheme from "../../hooks/common/useTheme.tsx";
 import {IoClose} from "react-icons/io5";
 import {AnimatePresence, motion} from "framer-motion";
+import SearchBar from "./SearchBar.tsx";
 
 const nav_lilnks: { title: string, to: string }[] =
     [{title: "Home", to: "/"},
@@ -22,7 +23,6 @@ const Navbar: FC = (): JSX.Element => {
 
     const location: Location = useLocation()
 
-    const input_ref: MutableRefObject<HTMLInputElement | null> = useRef<HTMLInputElement | null>(null)
     const [showSearch, setShowSearch] = useState<boolean>(false)
     const [showMenu, setShowMenu] = useState<boolean>(false)
     const {theme, changeTheme} = useTheme()
@@ -60,13 +60,7 @@ const Navbar: FC = (): JSX.Element => {
 
                 <AnimatePresence>
                     {showSearch ?
-                        <motion.input ref={input_ref} initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}}
-                                      exit={{opacity: 0, scale: 0}}
-                                      transition={{duration: 0.5, type: "spring"}} type="search"
-                                      className="search_input" onBlur={(): void => {
-                            setShowSearch(false);
-
-                        }}/> :
+                        <SearchBar setShowSearch={setShowSearch}/> :
                         <motion.div initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}}
                                     exit={{opacity: 0, scale: 0}}
                                     transition={{duration: 0.5, type: "spring"}} className="nav_bar_icon"
@@ -74,9 +68,6 @@ const Navbar: FC = (): JSX.Element => {
 
                                         setShowSearch(true);
 
-                                        setTimeout((): void => {
-                                            input_ref?.current?.focus();
-                                        }, 500)
 
                                     }}>
                             <LuSearch/>
