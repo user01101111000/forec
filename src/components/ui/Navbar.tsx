@@ -1,6 +1,6 @@
-import {FC, useState} from "react";
+import {FC, JSX, MutableRefObject, useRef, useState} from "react";
 import logo from "../../assets/images/logo.svg";
-import {NavLink, useLocation} from "react-router-dom";
+import {Location, NavLink, useLocation} from "react-router-dom";
 import {LuSearch} from "react-icons/lu";
 import {MdOutlineDarkMode} from "react-icons/md";
 import {MdOutlineLightMode} from "react-icons/md";
@@ -18,21 +18,24 @@ const nav_lilnks: { title: string, to: string }[] =
         }]
 
 
-const Navbar: FC = () => {
+const Navbar: FC = (): JSX.Element => {
 
-    const location = useLocation()
+    const location: Location = useLocation()
+
+    const input_ref: MutableRefObject<HTMLInputElement | null> = useRef<HTMLInputElement | null>(null)
+    const [showSearch, setShowSearch] = useState<boolean>(false)
     const [showMenu, setShowMenu] = useState<boolean>(false)
     const {theme, changeTheme} = useTheme()
 
-    const nav_links_components = nav_lilnks.map((link: { title: string, to: string }) =>
-        <NavLink key={link.to} to={link.to} onClick={() => {
-            setShowMenu((false))
 
-
-            if (location.pathname == link.to) window.scrollTo(0, 0)
-
-
-        }}>{link.title}</NavLink>
+    const nav_links_components: JSX.Element[] = nav_lilnks.map((link: {
+            title: string,
+            to: string
+        }): JSX.Element =>
+            <NavLink key={link.to} to={link.to} onClick={(): void => {
+                setShowMenu(false);
+                if (location.pathname == link.to) window.scrollTo(0, 0)
+            }}>{link.title}</NavLink>
     )
 
 
@@ -55,9 +58,31 @@ const Navbar: FC = () => {
             <div className="nav_bar_footer">
 
 
-                <div className="nav_bar_icon">
-                    <LuSearch/>
-                </div>
+                <AnimatePresence>
+                    {showSearch ?
+                        <motion.input ref={input_ref} initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}}
+                                      exit={{opacity: 0, scale: 0}}
+                                      transition={{duration: 0.5, type: "spring"}} type="search"
+                                      className="search_input" onBlur={(): void => {
+                            setShowSearch(false);
+
+                        }}/> :
+                        <motion.div initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}}
+                                    exit={{opacity: 0, scale: 0}}
+                                    transition={{duration: 0.5, type: "spring"}} className="nav_bar_icon"
+                                    onClick={() => {
+
+                                        setShowSearch(true);
+
+                                        setTimeout((): void => {
+                                            input_ref?.current?.focus();
+                                        }, 500)
+
+                                    }}>
+                            <LuSearch/>
+                        </motion.div>}
+                </AnimatePresence>
+
 
                 <div className="nav_bar_icon" onClick={() => changeTheme()}>
                     {theme == "dark" ? <MdOutlineDarkMode/> : <MdOutlineLightMode/>}

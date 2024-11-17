@@ -9,7 +9,7 @@ const DetailHeader: FC<DetailHeaderProps> = (props: DetailHeaderProps = {
     ingredient_count: 0,
     area: "",
     video: ""
-}) => {
+})  => {
 
     return <section className="detail_header">
 
@@ -39,7 +39,6 @@ const DetailHeader: FC<DetailHeaderProps> = (props: DetailHeaderProps = {
                 <FaCirclePlay className="detail_header_icon"/>
                 <h3>{props.video ? "Video is available" : "Video not available"}</h3>
             </div>
-
 
         </div>
 

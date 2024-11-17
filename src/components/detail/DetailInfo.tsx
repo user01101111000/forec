@@ -11,11 +11,6 @@ const DetailInfo: FC<DetailInfoProps> = (props: DetailInfoProps = {
 }) => {
 
 
-    console.log(props.ingredients);
-    console.log(props.measures);
-    console.log(props.instructions)
-
-
     const ingredients_items = props.ingredients.map((item: string, index: number) => <li
         key={`${item}${index}`}>{item}</li>)
     const measures_items = props.measures.map((item: string, index: number) => <li key={`${item}${index}`}>{item}</li>)
@@ -30,9 +25,13 @@ const DetailInfo: FC<DetailInfoProps> = (props: DetailInfoProps = {
             </div>
 
 
-            <div className="player_wrapper">
-                <ReactPlayer className="react_player" controls url={props.youtube}/>
-            </div>
+            {props.youtube && <div className="detail_info_instructions_video">
+
+                <h1>Video</h1>
+                <div className="player_wrapper">
+                    <ReactPlayer className="react_player" controls url={props.youtube}/>
+                </div>
+            </div>}
 
 
         </div>
@@ -53,6 +52,12 @@ const DetailInfo: FC<DetailInfoProps> = (props: DetailInfoProps = {
                 </ul>
             </div>
 
+
+            <div className="detail_info_note">
+                <p><span>Note :</span> Nutritional values are approximate and may vary based on specific ingredients and
+                    portion
+                    sizes.</p>
+            </div>
 
         </div>
 

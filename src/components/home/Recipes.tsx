@@ -55,9 +55,6 @@ const Recipes: FC = () => {
                                                                                    }}>{category}</p>);
 
 
-    console.log(cards)
-
-
     const recipe_cards = cards?.meals.map((meal: CategoryMeal) => <RecipeCard key={meal.idMeal}
                                                                               data={{
                                                                                   "image": meal?.strMealThumb,

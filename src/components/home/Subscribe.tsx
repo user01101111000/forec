@@ -14,7 +14,7 @@ const Subscribe: FC = () => {
     }
 
 
-    return <section className="subscribe" id="subscribe">
+    return <div className="subscribe" id="subscribe">
 
         <h1>Join the fun Subscribe now!</h1>
 
@@ -31,7 +31,7 @@ const Subscribe: FC = () => {
         </form>
 
 
-    </section>
+    </div>
 }
 
 

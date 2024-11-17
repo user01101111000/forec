@@ -1,9 +1,20 @@
 @use "../../scss/utils/placeholders" as *;
 @use "../../scss/utils/mixins" as *;
 
+@keyframes link_anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1
+  }
+
+}
 
 .second_navbar {
   display: none;
+
+  overflow-x: hidden;
 
 
   @include respond(tab-port) {
@@ -13,15 +24,17 @@
     justify-content: center;
 
 
+    padding: 1rem;
     gap: 1rem;
 
     position: fixed;
+    inset: 0;
     height: 100%;
     width: 100%;
 
     z-index: 101;
 
-    background-color: var(--white-1);
+    backdrop-filter: blur(32px);
 
 
     a {
@@ -31,16 +44,16 @@
 
       font-weight: 600;
       text-transform: uppercase;
-      transition: all 0.3s ease-in-out;
 
+      animation: link_anim 1s ease-in-out;
 
     }
 
     .close_icon {
       position: absolute;
       font-size: 2rem;
-      top: 0.5rem;
-      left: 0.5rem;
+      top: 1rem;
+      left: 1rem;
     }
 
 
@@ -136,6 +149,16 @@
       font-weight: 500;
       padding: 0.8rem 1.5rem;
       font-size: clamp(0.8rem, 1.5vw, 1rem);
+    }
+
+    .search_input {
+      background-color: transparent;
+      outline: none;
+      border: 0.5px solid var(--border-color);
+      border-radius: 32px;
+      padding: 0.5rem 0.8rem;
+      color: var(--black-1);
+      font-weight: 500;
     }
   }
 

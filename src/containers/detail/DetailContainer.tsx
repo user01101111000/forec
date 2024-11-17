@@ -3,6 +3,8 @@ import {motion} from "framer-motion";
 import DetailHeader from "../../components/detail/DetailHeader.tsx";
 import DetailInfo from "../../components/detail/DetailInfo.tsx";
 import {DetailContainerProps} from "../../types/components/components_types.ts";
+import Featured from "../../components/home/Featured.tsx";
+import Subscribe from "../../components/home/Subscribe.tsx";
 
 
 const DetailContainer: FC<DetailContainerProps> = (props: DetailContainerProps) => {
@@ -23,6 +25,9 @@ const DetailContainer: FC<DetailContainerProps> = (props: DetailContainerProps) 
                     instructions={props.data?.strInstructions ?? ""} youtube={props?.data?.strYoutube ?? ""}/>
 
 
+        <Featured/>
+
+        <Subscribe/>
     </motion.section>
 }
 

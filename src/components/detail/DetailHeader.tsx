@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import {DetailHeaderProps} from "../../types/components/components_types.ts";
 import {PiBowlFoodBold} from "react-icons/pi";
 import {MdLocationOn} from "react-icons/md";
@@ -9,7 +9,7 @@ const DetailHeader: FC<DetailHeaderProps> = (props: DetailHeaderProps = {
     ingredient_count: 0,
     area: "",
     video: ""
-}) => {
+}): JSX.Element => {
 
     return <section className="detail_header">
 

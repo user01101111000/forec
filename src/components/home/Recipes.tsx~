@@ -66,6 +66,7 @@ const Recipes: FC = () => {
                                                                                   "vegan": false,
                                                                                   "video": "",
                                                                                   area: "",
+                                                                                  id: meal?.idMeal
                                                                               }} recipe={false}
         />
     ).slice(0, loadCount)

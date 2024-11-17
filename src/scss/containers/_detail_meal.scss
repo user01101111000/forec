@@ -130,7 +130,7 @@
 
       display: flex;
       flex-direction: column;
-      gap: 5rem;
+      gap: clamp(1rem, 2vw, 2rem);
 
       .detail_info_instructions_content {
 
@@ -144,24 +144,40 @@
         }
 
         p {
-          line-height: 1.6;
-          font-weight: 300;
+          line-height: 2;
+          font-weight: 400;
           font-size: clamp(0.9rem, 1.5vw, 1rem);
         }
       }
 
-      .player_wrapper {
-        position: relative;
-        aspect-ratio: 16/9;
 
-        .react_player {
-          height: 100% !important;
-          width: 100% !important;
-          position: absolute;
+      .detail_info_instructions_video {
 
-          top: 0;
-          left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1rem, 2vw, 2rem);
+
+        h1 {
+          font-size: clamp(1.5rem, 3vw, 2rem);
+          font-weight: 600;
         }
+
+        .player_wrapper {
+          position: relative;
+          aspect-ratio: 16/9;
+          border-radius: 24px;
+          overflow: hidden;
+
+          .react_player {
+            height: 100% !important;
+            width: 100% !important;
+            position: absolute;
+
+            top: 0;
+            left: 0;
+          }
+        }
+
       }
 
 
@@ -172,7 +188,7 @@
       flex-direction: column;
       align-items: end;
 
-      gap: 2rem;
+      gap: clamp(1rem, 2vw, 2rem);
 
 
       .detail_info_area {
@@ -193,6 +209,7 @@
           font-size: clamp(0.8rem, 3vw, 1.5rem);
           font-weight: 500;
           color: var(--orange-1);
+          font-style: italic;
         }
 
 
@@ -202,6 +219,11 @@
           gap: 1rem;
           list-style: disc;
           padding: 1rem;
+
+          li {
+            font-style: italic;
+            font-weight: 400;
+          }
         }
 
 
@@ -211,6 +233,33 @@
         @include respond(phone) {
           min-width: 100%;
         }
+      }
+
+
+      .detail_info_note {
+        width: 50%;
+
+        p {
+          line-height: 1.5;
+          font-size: clamp(0.8rem, 3vw, 1rem);
+          font-weight: 500;
+          font-style: italic;
+
+
+          span {
+            color: var(--orange-1);
+            font-weight: bold;
+          }
+        }
+
+        @include respond(tab-land) {
+          min-width: 70%;
+        }
+        @include respond(phone) {
+          min-width: 100%;
+          text-align: center;
+        }
+
       }
 
 
