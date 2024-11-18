@@ -14,8 +14,6 @@
 
   overflow: hidden;
 
-  position: relative;
-
   .video_area {
     position: absolute;
     top: 1rem;
