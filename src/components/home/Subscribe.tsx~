@@ -1,6 +1,6 @@
-import {FC, FormEvent, JSX, useRef} from "react";
+import {FC, FormEvent, useRef} from "react";
 
-const Subscribe: FC = (): JSX.Element => {
+const Subscribe: FC = () => {
 
     const email_ref = useRef<HTMLInputElement | null>(null)
 

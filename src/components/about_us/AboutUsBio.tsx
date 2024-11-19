@@ -1,5 +1,5 @@
 import {FC, JSX} from "react";
-import author from "../../assets/images/author.png"
+import author from "../../assets/images/author.webp"
 import {FaInstagram, FaFacebook, FaYoutube} from "react-icons/fa";
 import useTheme from "../../hooks/common/useTheme.tsx";
 
