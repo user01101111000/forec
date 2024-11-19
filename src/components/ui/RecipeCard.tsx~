@@ -40,9 +40,10 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
     }}>
 
         {props.data.video &&
-            <a href={props.data.video} target="_blank" className="video_area" onClick={(e) => {
-                e.stopPropagation();
-            }}><FaCirclePlay
+            <a href={props.data.video} target="_blank" className="video_area"
+               onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+                   e.stopPropagation();
+               }}><FaCirclePlay
                 className="play_icon"/> Watch
                 video</a>}
 
@@ -76,7 +77,7 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
         </div>
 
 
-    </div> : <div className="recipe_card_2" onClick={() => {
+    </div> : <div className="recipe_card_2" onClick={(): void => {
         navigate(`/detail/${props.data.id}`)
     }}>
 

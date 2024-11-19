@@ -8,5 +8,3 @@ const image_urls: string[] = [
     "https://www.shutterstock.com/image-photo/chef-adds-salt-prepared-classic-600nw-2040770078.jpg",
     "https://www.ecoleducasse.com/application/files/3616/8031/9510/What_is_food_plating_and_presentation.png",
 ]
-
-export default image_urls;

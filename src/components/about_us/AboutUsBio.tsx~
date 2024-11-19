@@ -9,7 +9,7 @@ const AboutUsBio: FC = (): JSX.Element => {
 
     const {theme} = useTheme();
 
-    const gallery: JSX.Element[] = image_urls.map((url: string, index: number): JSX.Element => {
+    const gallery = image_urls.map((url: string, index: number): JSX.Element => {
         return <figure key={index}>
             <img src={url} alt={`gallery${index}`}/>
         </figure>

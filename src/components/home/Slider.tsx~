@@ -1,4 +1,4 @@
-import {FC, MutableRefObject} from "react";
+import {FC, JSX, MutableRefObject} from "react";
 import {Swiper, SwiperRef, SwiperSlide} from 'swiper/react';
 // @ts-ignore
 import 'swiper/css';
@@ -9,12 +9,12 @@ import RecipeCard from "../ui/RecipeCard.tsx";
 import {Meal} from "../../types/data/data_types.ts";
 
 
-const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, datas: Meal[] }> = (props: {
+const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, data: Meal[] }> = (props: {
     swiperRef: MutableRefObject<SwiperRef | null>,
-    datas: Meal[]
-}) => {
+    data: Meal[]
+}): JSX.Element => {
 
-    const slides = props.datas.map((data: Meal) => <SwiperSlide
+    const slides: JSX.Element[] = props.data.map((data: Meal): JSX.Element => <SwiperSlide
         key={data.idMeal}>
 
         <RecipeCard data={
@@ -31,7 +31,7 @@ const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, datas: Meal[] 
 
             }
 
-        } recipe={true}/>
+        } recipe={true} tips={false}/>
 
     </SwiperSlide>)
 

@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import {DetailInfoProps} from "../../types/components/components_types.ts";
 import ReactPlayer from 'react-player/youtube'
 
@@ -8,12 +8,14 @@ const DetailInfo: FC<DetailInfoProps> = (props: DetailInfoProps = {
     measures: [],
     instructions: "",
     youtube: ""
-}) => {
+}): JSX.Element => {
 
 
-    const ingredients_items = props.ingredients.map((item: string, index: number) => <li
+    const ingredients_items: JSX.Element[] = props.ingredients.map((item: string, index: number): JSX.Element => <li
         key={`${item}${index}`}>{item}</li>)
-    const measures_items = props.measures.map((item: string, index: number) => <li key={`${item}${index}`}>{item}</li>)
+
+    const measures_items: JSX.Element[] = props.measures.map((item: string, index: number): JSX.Element => <li
+        key={`${item}${index}`}>{item}</li>)
 
 
     return <div className="detail_info">

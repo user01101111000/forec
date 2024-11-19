@@ -84,7 +84,7 @@ const Navbar: FC = (): JSX.Element => {
         <AnimatePresence>
             {showMenu &&
                 <motion.nav initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="second_navbar">
-                    <IoClose className="close_icon" onClick={(): void => setShowMenu(false)}/>
+                    <IoClose className="close_icon" onClick={() => setShowMenu(false)}/>
                     {nav_links_components}
                 </motion.nav>}
         </AnimatePresence>

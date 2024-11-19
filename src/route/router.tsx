@@ -1,8 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import routes from "./routes.tsx";
 
-
-const router = createBrowserRouter(routes, {
+export default createBrowserRouter(routes, {
     future: {
         v7_partialHydration: true,
         v7_relativeSplatPath: true,
@@ -11,6 +10,3 @@ const router = createBrowserRouter(routes, {
         v7_skipActionErrorRevalidation: true
     },
 });
-
-
-export default router;

@@ -1,4 +1,4 @@
-import {FC, MutableRefObject} from "react";
+import {FC, JSX, MutableRefObject} from "react";
 import {BsArrowLeftCircle} from "react-icons/bs";
 import {BsArrowRightCircle} from "react-icons/bs";
 import Slider from "./Slider.tsx";
@@ -8,7 +8,7 @@ import useGetFeaturedMeals from "../../hooks/service/useGetFeaturedMeals.tsx";
 import LoadingContainer from "../ui/LoadingContainer.tsx";
 
 
-const Featured: FC = () => {
+const Featured: FC = (): JSX.Element => {
     const swiperRef: MutableRefObject<SwiperRef | null> = useRef<SwiperRef | null>(null);
 
 
@@ -28,10 +28,10 @@ const Featured: FC = () => {
             <h1>featured recipes</h1>
 
             <div className="nav_buttons">
-                <BsArrowLeftCircle className="arrow_icons" onClick={() => {
+                <BsArrowLeftCircle className="arrow_icons" onClick={(): void => {
                     swiperRef.current?.swiper.slidePrev();
                 }}/>
-                <BsArrowRightCircle className="arrow_icons" onClick={() => {
+                <BsArrowRightCircle className="arrow_icons" onClick={(): void => {
                     swiperRef.current?.swiper.slideNext();
                 }}/>
             </div>
@@ -39,7 +39,7 @@ const Featured: FC = () => {
 
 
         <div className="swiper_wrapper">
-            <Slider datas={data ?? []} swiperRef={swiperRef}/>
+            <Slider meals={data ?? []} swiperRef={swiperRef}/>
 
         </div>
 

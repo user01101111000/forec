@@ -1,14 +1,12 @@
-import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {ICategoryResponse} from "../../types/data/data_types.ts";
+import {useMutation, UseMutationResult} from "@tanstack/react-query";
 import get_meals_by_category from "../../service/meals/get_meals_by_category.ts";
+import {IMealResponse} from "../../types/data/data_types.ts";
 
 
-const useGetMealsByCategory: (c : string) => UseQueryResult<ICategoryResponse> = (c : string): UseQueryResult<ICategoryResponse> => {
-    return useQuery({
-        queryKey: ['categories'],
-        queryFn: () => get_meals_by_category(c),
-        staleTime: 300000,
-        retry: 1,
+const useGetMealsByCategory: () => UseMutationResult<IMealResponse, Error, string, unknown> = (): UseMutationResult<IMealResponse, Error, string, unknown> => {
+    return useMutation({
+        mutationKey: ['categoryMeals'],
+        mutationFn: get_meals_by_category,
     })
 }
-export default useGetMealsByCategory
+export default useGetMealsByCategory;

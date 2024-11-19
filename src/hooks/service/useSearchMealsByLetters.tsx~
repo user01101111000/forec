@@ -3,7 +3,7 @@ import {useMutation, UseMutationResult} from "@tanstack/react-query";
 import {IMealResponse} from "../../types/data/data_types.ts";
 
 
-const useSearchMealsByLetters: () => UseMutationResult<IMealResponse, Error, string, unknown> = (): UseMutationResult<IMealResponse, Error, string, unknown> => {
+const useSearchMealsByLetters: () => UseMutationResult<IMealResponse, Error, string> = (): UseMutationResult<IMealResponse, Error, string> => {
     return useMutation({
         mutationKey: ['searchMeals'],
         mutationFn: search_meals_by_letters,

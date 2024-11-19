@@ -1,10 +1,10 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import logo from "../../assets/images/logo.svg";
 import {NavLink} from "react-router-dom";
 import {FaGithub} from "react-icons/fa";
 import {FaLinkedin} from "react-icons/fa";
 
-const Footer: FC = () => {
+const Footer: FC = (): JSX.Element => {
 
     return <footer className="footer">
 

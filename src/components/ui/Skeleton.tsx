@@ -7,7 +7,7 @@ const Skeleton: FC<ISkeletonProps> = (props: ISkeletonProps = {
     width: "100%",
     borderRadius: "0px",
     gridArea: "auto"
-}) => {
+}): JSX.Element => {
 
 
     return <div className="skeleton" style={{

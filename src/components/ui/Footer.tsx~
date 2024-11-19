@@ -19,8 +19,7 @@ const Footer: FC = () => {
             <nav>
 
                 <NavLink to={"/"}>Home</NavLink>
-                <NavLink to={"/recipes"}>Cooking tips</NavLink>
-                <NavLink to={"/contact"}>Contact</NavLink>
+                <NavLink to={"/cooking-tips"}>Cooking tips</NavLink>
                 <NavLink to={"/about-us"}>About us</NavLink>
 
 

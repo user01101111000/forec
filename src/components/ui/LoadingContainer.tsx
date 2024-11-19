@@ -8,7 +8,7 @@ const LoadingContainer: FC<LoadingContainerProps> = (props: LoadingContainerProp
     widthC: "100%",
     heightI: "20px",
     widthI: "20px"
-}) => {
+}): JSX.Element => {
     return <div className="loading_container" style={{
         height: props.heightC,
         width: props.widthC

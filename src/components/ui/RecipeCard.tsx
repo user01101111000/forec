@@ -15,7 +15,6 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
 
     const navigate: NavigateFunction = useNavigate();
 
-
     const [loadImage, setLoadImage] = useState<boolean>(false)
 
 
@@ -40,9 +39,10 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
     }}>
 
         {props.data.video &&
-            <a href={props.data.video} target="_blank" className="video_area" onClick={(e) => {
-                e.stopPropagation();
-            }}><FaCirclePlay
+            <a href={props.data.video} target="_blank" className="video_area"
+               onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+                   e.stopPropagation();
+               }}><FaCirclePlay
                 className="play_icon"/> Watch
                 video</a>}
 

@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import {FC, JSX, useEffect, useState} from "react";
 import RecipeCard from "../ui/RecipeCard.tsx";
 import useGetAllCategories from "../../hooks/service/useGetAllCategories.tsx";
 import {CategoryMeal, ICategory, ICategoryMealResponse} from "../../types/data/data_types.ts";
@@ -7,9 +7,9 @@ import Skeleton from "../ui/Skeleton.tsx";
 import LoadingContainer from "../ui/LoadingContainer.tsx";
 
 
-const Recipes: FC = () => {
+const Recipes: FC = (): JSX.Element => {
 
-    const skeleton_cards = Array.from({length: 8}, (_, i: number) => (
+    const skeleton_cards: JSX.Element[] = Array.from({length: 8}, (_: unknown, i: number): JSX.Element => (
         <Skeleton height={"clamp(150px, 40vw, 200px)"} width={"100%"} borderRadius={"32px"} key={i}/>));
 
 
@@ -21,9 +21,9 @@ const Recipes: FC = () => {
     const {mutateAsync, isPending} = useGetMealsByCategory()
 
 
-    useEffect(() => {
+    useEffect((): void => {
 
-        mutateAsync(selectedCategory).then((data: ICategoryMealResponse) => {
+        mutateAsync(selectedCategory).then((data: ICategoryMealResponse): void => {
             setCards(data);
         })
     }, [selectedCategory])
@@ -42,31 +42,35 @@ const Recipes: FC = () => {
     const categories: string[] = data!.categories.map((category: ICategory): string => category.strCategory)
 
 
-    const category_labels = categories.map((category: string, index: number) => <p key={index}
-                                                                                   className={`category_label${index === 0 ? " active_category" : ""}`}
-                                                                                   onClick={(e) => {
+    const category_labels: JSX.Element[] = categories.map((category: string, index: number): JSX.Element => <p
+        key={index}
+        className={`category_label${index === 0 ? " active_category" : ""}`}
+        onClick={(e: React.MouseEvent<HTMLParagraphElement, MouseEvent>
+        ): void => {
 
-                                                                                       document.querySelectorAll(".category_label").forEach((el: Element) => el.classList.remove("active_category"))
-                                                                                       e.currentTarget.classList.add("active_category")
+            document.querySelectorAll(".category_label").forEach((el: Element): void => el.classList.remove("active_category"))
+            e.currentTarget.classList.add("active_category")
 
-                                                                                       setSelectedCategory(category);
-                                                                                       setLoadCount(8)
+            setSelectedCategory(category);
+            setLoadCount(8)
 
-                                                                                   }}>{category}</p>);
+        }}>{category}</p>);
 
 
-    const recipe_cards = cards?.meals.map((meal: CategoryMeal) => <RecipeCard key={meal.idMeal}
-                                                                              data={{
-                                                                                  "image": meal?.strMealThumb,
-                                                                                  "title": meal?.strMeal,
-                                                                                  description: "",
-                                                                                  "vegan": false,
-                                                                                  "video": "",
-                                                                                  area: "",
-                                                                                  id: meal?.idMeal
-                                                                              }} recipe={false} tips={false}
+    const recipe_cards: JSX.Element[] | undefined = cards?.meals.map((meal: CategoryMeal): JSX.Element => <RecipeCard
+            key={meal.idMeal}
+            data={{
+                "image": meal?.strMealThumb,
+                "title": meal?.strMeal,
+                description: "",
+                "vegan": false,
+                "video": "",
+                area: "",
+                id: meal?.idMeal
+            }} recipe={false} tips={false}
         />
     ).slice(0, loadCount)
+
     return <section className="recipes" id="recipes">
 
         <div className="recipes_header">
@@ -94,7 +98,7 @@ const Recipes: FC = () => {
 
         </div>
 
-        {loadCount < (cards?.meals.length ?? 0) && <button className="load_more_button" onClick={() => {
+        {loadCount < (cards?.meals.length ?? 0) && <button className="load_more_button" onClick={(): void => {
 
             if (loadCount < cards!.meals.length) setLoadCount(loadCount + 8)
 

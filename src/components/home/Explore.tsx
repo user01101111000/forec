@@ -1,8 +1,8 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import useTheme from "../../hooks/common/useTheme.tsx";
 
 
-const Explore: FC = () => {
+const Explore: FC = (): JSX.Element => {
 
     const {theme} = useTheme();
 

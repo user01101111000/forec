@@ -1,9 +1,9 @@
-import {FC, JSX, MutableRefObject, useCallback, useEffect, useRef, useState} from "react";
+import {ChangeEvent, FC, JSX, MutableRefObject, useCallback, useEffect, useRef, useState} from "react";
 import {motion} from "framer-motion";
 import {SearchBarProps} from "../../types/components/components_types.ts";
 import useSearchMealsByLetters from "../../hooks/service/useSearchMealsByLetters.tsx";
 import {IMealResponse, Meal} from "../../types/data/data_types.ts";
-import debounce from "debounce";
+import debounce, {DebouncedFunction} from "debounce";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 
 const SearchBar: FC<SearchBarProps> = (props: SearchBarProps): JSX.Element => {
@@ -19,18 +19,16 @@ const SearchBar: FC<SearchBarProps> = (props: SearchBarProps): JSX.Element => {
     const {mutateAsync} = useSearchMealsByLetters();
 
 
-    const debounce_func = useCallback(debounce((term) => {
+    const debounce_func: DebouncedFunction<(term: string) => void> = useCallback(debounce((term: string): void => {
         if (term.length > 0) {
             mutateAsync(term).then((data: IMealResponse): void => {
                 setSuggestions(data);
-                console.log("isledi")
-
             })
         } else setSuggestions(null)
     }, 500), [])
 
 
-    useEffect(() => {
+    useEffect((): void => {
         input_ref?.current?.focus();
     }, [input_ref?.current])
 
@@ -45,7 +43,7 @@ const SearchBar: FC<SearchBarProps> = (props: SearchBarProps): JSX.Element => {
                 props.setShowSearch(false)
             }, 100)
 
-        }} value={text} onChange={(e) => {
+        }} value={text} onChange={(e: ChangeEvent<HTMLInputElement>): void => {
             debounce_func(e.target.value);
             setText(e.target.value)
         }}/>

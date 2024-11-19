@@ -1,6 +1,6 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 
-const AboutUsHome: FC = () => {
+const AboutUsHome: FC = (): JSX.Element => {
     return <section className="about_us_home">
 
         <div className="about_us_home_content">

@@ -1,6 +1,6 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 
-const Hero: FC = () => {
+const Hero: FC = (): JSX.Element => {
 
     return <article className="hero">
         <h1>Unleash Culinary Excellence</h1>

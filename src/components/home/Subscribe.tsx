@@ -1,17 +1,15 @@
-import {FC, FormEvent, JSX, useRef} from "react";
+import {FC, FormEvent, JSX, MutableRefObject, useRef} from "react";
 import bg from "../../assets/images/sub_bg.webp"
 
 const Subscribe: FC = (): JSX.Element => {
 
-    const email_ref = useRef<HTMLInputElement | null>(null)
+    const email_ref: MutableRefObject<HTMLInputElement | null> = useRef<HTMLInputElement | null>(null)
 
     function form_submit(e: FormEvent): void {
         e.preventDefault();
 
-        if (email_ref.current && email_ref.current.value) {
-            console.log(email_ref.current.value);
-            email_ref.current.value = "";
-        }
+        if (email_ref.current && email_ref.current.value) email_ref.current.value = "";
+
     }
 
 

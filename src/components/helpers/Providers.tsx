@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import {QueryClientProvider, QueryClient} from "@tanstack/react-query";
 import {IProvidersProps} from "../../types/components/components_types.ts";
 import {ThemeContextProvider} from "../../context/ThemeContext.tsx";
@@ -16,7 +16,7 @@ const queryClient: QueryClient = new QueryClient(
 );
 
 
-const Providers: FC<IProvidersProps> = (props: IProvidersProps) => {
+const Providers: FC<IProvidersProps> = (props: IProvidersProps): JSX.Element => {
     return <ThemeContextProvider>
         <QueryClientProvider client={queryClient}>{props.children}
 
