@@ -1,4 +1,5 @@
 import {FC, FormEvent, JSX, useRef} from "react";
+import bg from "../../assets/images/sub_bg.webp"
 
 const Subscribe: FC = (): JSX.Element => {
 
@@ -15,6 +16,8 @@ const Subscribe: FC = (): JSX.Element => {
 
 
     return <div className="subscribe" id="subscribe">
+
+        <img src={bg} alt="sub_bg" className={"sub_bg"}/>
 
         <h1>Join the fun Subscribe now!</h1>
 
