@@ -1,6 +1,7 @@
 import {FC, JSX} from "react";
 import {DetailInfoProps} from "../../types/components/components_types.ts";
 import ReactPlayer from 'react-player/youtube'
+import divide_text from "../../utils/divide_text.ts";
 
 
 const DetailInfo: FC<DetailInfoProps> = (props: DetailInfoProps = {
@@ -18,12 +19,16 @@ const DetailInfo: FC<DetailInfoProps> = (props: DetailInfoProps = {
         key={`${item}${index}`}>{item}</li>)
 
 
+    const instructions_items: JSX.Element[] = divide_text(props.instructions).map((item: string, index: number): JSX.Element =>
+        <p key={`item${index}`}>{item}</p>)
+
+
     return <div className="detail_info">
 
         <div className="detail_info_instructions">
             <div className="detail_info_instructions_content">
                 <h1>Instructions</h1>
-                <p>{props.instructions}</p>
+                {instructions_items}
             </div>
 
 

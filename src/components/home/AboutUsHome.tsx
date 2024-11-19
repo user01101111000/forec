@@ -1,6 +1,10 @@
 import {FC, JSX} from "react";
+import {NavigateFunction, useNavigate} from "react-router-dom";
 
 const AboutUsHome: FC = (): JSX.Element => {
+
+    const navigate: NavigateFunction = useNavigate();
+
     return <section className="about_us_home">
 
         <div className="about_us_home_content">
@@ -11,7 +15,10 @@ const AboutUsHome: FC = (): JSX.Element => {
                 delightful culinary experiences. Join us in savoring the essence of every dish and the stories that
                 unfold.</h2>
 
-            <button>read more</button>
+            <button onClick={(): void => {
+                navigate("/about-us")
+            }}>read more
+            </button>
 
         </div>
 

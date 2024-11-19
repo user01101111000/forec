@@ -29,7 +29,7 @@ const Explore: FC = (): JSX.Element => {
             </p>
 
 
-            <button onClick={scroll_to_recipes}>see more</button>
+            <button>see more</button>
         </div>
 
 

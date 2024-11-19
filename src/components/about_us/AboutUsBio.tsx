@@ -1,17 +1,28 @@
-import {FC, JSX} from "react";
+import {FC, JSX, useState} from "react";
 import author from "../../assets/images/author.webp"
 import {FaInstagram, FaFacebook, FaYoutube} from "react-icons/fa";
 import useTheme from "../../hooks/common/useTheme.tsx";
 import image_urls from "../../service/const_data/bio_urls.ts";
+import Skeleton from "../ui/Skeleton.tsx";
 
 
 const AboutUsBio: FC = (): JSX.Element => {
 
     const {theme} = useTheme();
+    const [imgLoaded, setImgLoaded] = useState<boolean>(false);
+
 
     const gallery: JSX.Element[] = image_urls.map((url: string, index: number): JSX.Element => {
+
+        const img = new Image();
+
+        img.src = url;
+        img.onload = (): void => {
+            setImgLoaded(true);
+        }
+
         return <figure key={index}>
-            <img src={url} alt={`gallery${index}`}/>
+            {imgLoaded ? <img src={url} alt={`gallery${index}`}/> : <Skeleton height={"100%"} width={"100%"}/>}
         </figure>
     })
 

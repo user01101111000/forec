@@ -22,9 +22,7 @@ const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, meals: Meal[] 
                 "image": data?.strMealThumb,
                 "title": data?.strMeal,
                 description: data?.strInstructions,
-                "vegan": data.strCategory === "Vegan" || data.strCategory === "Vegetarian"
-                    ? true
-                    : false,
+                "vegan": data.strCategory === "Vegan" || data.strCategory === "Vegetarian",
                 "video": data?.strYoutube,
                 area: data?.strArea,
                 id: data?.idMeal
