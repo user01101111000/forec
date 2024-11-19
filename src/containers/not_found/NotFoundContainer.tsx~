@@ -1,8 +1,0 @@
-import {FC} from "react";
-import {motion} from "framer-motion";
-
-const NotFoundContainer: FC = () => {
-    return <motion.section initial={{opacity: 0}} animate={{opacity: 1}}>NotFound</motion.section>
-}
-
-export default NotFoundContainer;

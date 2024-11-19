@@ -80,6 +80,7 @@ const AboutUsBio: FC = (): JSX.Element => {
 
         </article>
 
+
         <article className="about_us_bio_persona_gallery">{gallery}</article>
 
     </section>

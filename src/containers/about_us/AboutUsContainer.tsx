@@ -1,23 +1,18 @@
-import {FC} from "react";
-import {motion} from "framer-motion";
+import {FC, JSX} from "react";
 import AboutUsHeader from "../../components/about_us/AboutUsHeader.tsx";
 import AboutUsBio from "../../components/about_us/AboutUsBio.tsx";
 import Featured from "../../components/home/Featured.tsx";
 import Subscribe from "../../components/home/Subscribe.tsx";
+import ASection from "../../components/ui/ASection.tsx";
 
-const AboutUsContainer: FC = () => {
+const AboutUsContainer: FC = (): JSX.Element => {
 
-    return <motion.section initial={{opacity: 0}} animate={{opacity: 1}} className="about_us_container">
-
+    return <ASection className={"about_us_container"}>
         <AboutUsHeader/>
-
         <AboutUsBio/>
-
         <Featured/>
-
         <Subscribe/>
-
-    </motion.section>
+    </ASection>
 }
 
 export default AboutUsContainer;

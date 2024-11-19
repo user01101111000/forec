@@ -1,10 +1,10 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import DetailContainer from "../../containers/detail/DetailContainer.tsx";
 import {useParams} from "react-router-dom";
 import useGetMealByID from "../../hooks/service/useGetMealByID.tsx";
 import LoadingContainer from "../../components/ui/LoadingContainer.tsx";
 
-const Detail: FC = () => {
+const Detail: FC = (): JSX.Element => {
 
 
     const {id} = useParams();

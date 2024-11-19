@@ -1,4 +1,4 @@
-import {Context, createContext, FC, JSX, useState} from "react";
+import {Context, createContext, FC, useState} from "react";
 import {ETheme, TThemeContext, TThemeContextProviderProps} from "../types/context/context_types.ts";
 
 
@@ -8,7 +8,7 @@ const ThemeContext: Context<TThemeContext> = createContext<TThemeContext>({
     },
 })
 
-const ThemeContextProvider: FC<TThemeContextProviderProps> = (props: TThemeContextProviderProps): JSX.Element => {
+const ThemeContextProvider: FC<TThemeContextProviderProps> = (props: TThemeContextProviderProps) => {
 
     const current_theme: ETheme = localStorage.getItem('theme') as ETheme ?? ETheme.LIGHT;
 

@@ -1,7 +1,7 @@
 import HomeContainer from "../../containers/home/HomeContainer.tsx";
-import {FC} from "react";
+import {FC, JSX} from "react";
 
-const Home: FC = () => {
+const Home: FC = (): JSX.Element => {
     return <HomeContainer/>
 }
 

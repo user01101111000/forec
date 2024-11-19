@@ -1,7 +1,7 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import NotFoundContainer from "../../containers/not_found/NotFoundContainer.tsx";
 
-const NotFound: FC = () => {
+const NotFound: FC = (): JSX.Element => {
 
     return <NotFoundContainer/>
 }

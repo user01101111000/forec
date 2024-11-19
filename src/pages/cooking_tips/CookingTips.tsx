@@ -1,7 +1,7 @@
-import {FC} from "react";
+import {FC, JSX} from "react";
 import CookingTipsContainer from "../../containers/cooking_tips/CookingTipsContainer.tsx";
 
-const CookingTips: FC = () => {
+const CookingTips: FC = () : JSX.Element => {
     return <CookingTipsContainer/>
 }
 
