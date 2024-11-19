@@ -26,7 +26,8 @@ const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, datas: Meal[] 
                     ? true
                     : false,
                 "video": data?.strYoutube,
-                area: data?.strArea
+                area: data?.strArea,
+                id: data?.idMeal
 
             }
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Meal} from "../data/data_types.ts";
-import {MutableRefObject} from "react";
+
 
 export type IProvidersProps = {
     children: React.ReactNode
@@ -13,7 +13,8 @@ export interface IFoodCardProps {
     description: string | null,
     area: string | null,
     vegan: boolean | null,
-    video: string | null
+    video: string | null,
+    link?: string
 }
 
 export type ISkeletonProps = {

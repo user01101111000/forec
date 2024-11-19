@@ -64,7 +64,7 @@ const Recipes: FC = () => {
                                                                                   "video": "",
                                                                                   area: "",
                                                                                   id: meal?.idMeal
-                                                                              }} recipe={false}
+                                                                              }} recipe={false} tips={false}
         />
     ).slice(0, loadCount)
     return <section className="recipes" id="recipes">

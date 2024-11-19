@@ -7,9 +7,10 @@ import Skeleton from "./Skeleton.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 
 
-const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean }> = (props: {
+const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> = (props: {
     data: IFoodCardProps,
-    recipe: boolean
+    recipe: boolean,
+    tips: boolean,
 }) => {
 
     const navigate: NavigateFunction = useNavigate();
@@ -33,7 +34,9 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean }> = (props: {
 
 
     return props.recipe ? <div className="recipe_card" onClick={() => {
-        navigate(`/detail/${props.data.id}`)
+        if (props.tips) window.open(props.data.link!, "_blank", "noopener,noreferrer");
+
+        else navigate(`/detail/${props.data.id}`)
     }}>
 
         {props.data.video &&

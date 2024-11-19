@@ -31,7 +31,7 @@ const Slider: FC<{ swiperRef: MutableRefObject<SwiperRef | null>, datas: Meal[] 
 
             }
 
-        } recipe={true}/>
+        } recipe={true} tips={false}/>
 
     </SwiperSlide>)
 

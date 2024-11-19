@@ -13,7 +13,8 @@ export interface IFoodCardProps {
     description: string | null,
     area: string | null,
     vegan: boolean | null,
-    video: string | null
+    video: string | null,
+    link?: string | null
 }
 
 export type ISkeletonProps = {
