@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import {FC, JSX, useEffect, useState} from "react";
 import vegan_icon from "../../assets/icons/vegan_icon.svg";
 import {IFoodCardProps} from "../../types/components/components_types.ts";
 import {FaCirclePlay} from "react-icons/fa6";
@@ -11,7 +11,7 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
     data: IFoodCardProps,
     recipe: boolean,
     tips: boolean,
-}) => {
+}): JSX.Element => {
 
     const navigate: NavigateFunction = useNavigate();
 
@@ -19,13 +19,13 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
     const [loadImage, setLoadImage] = useState<boolean>(false)
 
 
-    useEffect(() => {
+    useEffect((): void => {
 
         const img = new Image();
         img.src = props.data.image ?? ""
 
 
-        img.onload = () => {
+        img.onload = (): void => {
             setLoadImage(true)
         }
 
@@ -33,7 +33,7 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
     }, [])
 
 
-    return props.recipe ? <div className="recipe_card" onClick={() => {
+    return props.recipe ? <div className="recipe_card" onClick={(): void => {
         if (props.tips) window.open(props.data.link!, "_blank", "noopener,noreferrer");
 
         else navigate(`/detail/${props.data.id}`)
@@ -76,7 +76,7 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
         </div>
 
 
-    </div> : <div className="recipe_card_2" onClick={() => {
+    </div> : <div className="recipe_card_2" onClick={(): void => {
         navigate(`/detail/${props.data.id}`)
     }}>
 

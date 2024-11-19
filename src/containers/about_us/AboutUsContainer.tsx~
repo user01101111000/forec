@@ -1,8 +1,17 @@
 import {FC} from "react";
+import {motion} from "framer-motion";
+import AboutUsHeader from "../../components/about_us/AboutUsHeader.tsx";
+import AboutUsBio from "../../components/about_us/AboutUsBio.tsx";
 
 const AboutUsContainer: FC = () => {
 
-    return <section className="about_us_container">About us</section>
+    return <motion.section initial={{opacity: 0}} animate={{opacity: 1}} className="about_us_container">
+
+        <AboutUsHeader/>
+
+        <AboutUsBio/>
+
+    </motion.section>
 }
 
 export default AboutUsContainer;

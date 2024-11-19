@@ -14,7 +14,6 @@
   overflow: hidden;
 
   position: relative;
-  cursor: pointer;
 
   .video_area {
     position: absolute;
