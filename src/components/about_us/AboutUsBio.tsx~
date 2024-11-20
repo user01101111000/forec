@@ -82,6 +82,7 @@ const AboutUsBio: FC = (): JSX.Element => {
 
         </article>
 
+        <h1 className="gallery_title">Gallery</h1>
 
         <article className="about_us_bio_persona_gallery">{gallery}</article>
 
