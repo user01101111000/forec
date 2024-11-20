@@ -19,7 +19,7 @@ const ThemeContextProvider: FC<TThemeContextProviderProps> = (props: TThemeConte
             const current_theme: ETheme = theme === ETheme.LIGHT ? ETheme.DARK : ETheme.LIGHT;
             localStorage.setItem('theme', current_theme);
 
-            document.documentElement.setAttribute('data-theme', current_theme);
+            document.body.setAttribute('data-theme', current_theme);
 
             return current_theme;
         })

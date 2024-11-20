@@ -69,6 +69,14 @@
       transition: all 0.3s ease-in-out;
       text-transform: uppercase;
       color: var(--black-1);
+      font-weight: 600;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+
+      &:hover {
+        background-color: var(--orange-2);
+        border-color: var(--orange-2);
+        color: white;
+      }
     }
 
 

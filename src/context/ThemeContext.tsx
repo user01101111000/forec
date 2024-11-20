@@ -12,6 +12,8 @@ const ThemeContextProvider: FC<TThemeContextProviderProps> = (props: TThemeConte
 
     const current_theme: ETheme = localStorage.getItem('theme') as ETheme ?? ETheme.LIGHT;
 
+    document.body.setAttribute('data-theme', current_theme);
+
     const [theme, setTheme] = useState<ETheme>(current_theme);
 
     function changeTheme(): void {

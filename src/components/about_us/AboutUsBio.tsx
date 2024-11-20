@@ -41,11 +41,12 @@ const AboutUsBio: FC = (): JSX.Element => {
 
 
                     <div className="about_us_bio_persona_social_icons">
-                        <FaInstagram className="persona_icon"/>
-                        <FaFacebook className="persona_icon"/>
-                        <FaYoutube className="persona_icon"/>
-
-
+                        <a href="https://github.com/user01101111000/forec" target={"_blank"}><FaInstagram
+                            className="persona_icon"/></a>
+                        <a href="https://github.com/user01101111000/forec" target={"_blank"}><FaFacebook
+                            className="persona_icon"/></a>
+                        <a href="https://github.com/user01101111000/forec" target={"_blank"}><FaYoutube
+                            className="persona_icon"/></a>
                     </div>
                 </div>
 

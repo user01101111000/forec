@@ -13,7 +13,7 @@ const Footer: FC = (): JSX.Element => {
 
         <div className="footer_header">
 
-            <figure className="logo_fig" onClick={() => {
+            <figure className="logo_fig" onClick={(): void => {
                 navigate("/")
             }}>
                 <img src={logo} alt="logo"/>

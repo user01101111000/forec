@@ -31,7 +31,7 @@ const Footer: FC = (): JSX.Element => {
 
 
             <div className="social_media_footer">
-                <a href="https://github.com/user01101111000/recp" target="_blank"><FaGithub className="icon"/></a>
+                <a href="https://github.com/user01101111000/forec" target="_blank"><FaGithub className="icon"/></a>
                 <a href="https://www.linkedin.com/in/elnurguliyev/" target="_blank"><FaLinkedin className="icon"/></a>
 
 
