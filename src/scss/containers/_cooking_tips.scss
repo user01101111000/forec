@@ -28,7 +28,7 @@
       font-size: clamp(3rem, 5vw, 5rem);
       font-weight: 500;
       grid-area: a;
-
+      font-style: italic;
 
       @include respond(tab-port) {
         text-align: center;
@@ -39,6 +39,7 @@
       font-size: clamp(1rem, 1.5vw, 1.5rem);
       font-weight: 400;
       line-height: 1.5;
+      font-style: italic;
 
       grid-area: b;
       @include respond(tab-port) {
@@ -55,7 +56,7 @@
 
 
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
 
       align-items: center;
       justify-content: space-evenly;
@@ -64,8 +65,13 @@
       .cooking_hero_tip {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: clamp(1rem, 2vw, 1.5rem);
         max-width: 400px;
+
+        svg {
+          height: clamp(70px, 10vw, 80px);
+          width: clamp(70px, 10vw, 80px);
+        }
 
 
         .cooking_hero_tip_content {
@@ -76,14 +82,15 @@
           h1 {
             font-size: clamp(1rem, 2vw, 1.1rem);
             color: var(--orange-2);
-            font-weight: 500;
+            font-weight: 600;
             font-style: italic;
           }
 
           p {
             font-size: clamp(0.8rem, 2vw, 0.9rem);
             line-height: 1.5;
-            font-weight: 300;
+            font-weight: 400;
+            font-style: italic;
 
           }
         }
@@ -123,11 +130,11 @@
     h1 {
       text-transform: uppercase;
       font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 500;
+      font-weight: 600;
       user-select: none;
-
+      text-align: center;
       line-height: 1.3;
-
+      font-style: italic;
     }
 
     .cooking_basics_area {
@@ -136,7 +143,6 @@
       grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
 
       gap: 1rem;
-
 
     }
 

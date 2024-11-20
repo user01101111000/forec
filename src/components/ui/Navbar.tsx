@@ -1,6 +1,6 @@
 import {FC, JSX, useState} from "react";
-import logo from "../../assets/images/logo.svg";
-import {Location, NavLink, useLocation} from "react-router-dom";
+import logo from "../../assets/images/logo.webp";
+import {Location, NavigateFunction, NavLink, useLocation, useNavigate} from "react-router-dom";
 import {LuSearch} from "react-icons/lu";
 import {MdOutlineDarkMode} from "react-icons/md";
 import {MdOutlineLightMode} from "react-icons/md";
@@ -15,7 +15,7 @@ import nav_links from "../../service/const_data/nav_links.ts";
 const Navbar: FC = (): JSX.Element => {
 
     const location: Location = useLocation()
-
+    const navigate: NavigateFunction = useNavigate();
     const [showSearch, setShowSearch] = useState<boolean>(false)
     const [showMenu, setShowMenu] = useState<boolean>(false)
     const {theme, changeTheme} = useTheme()
@@ -35,12 +35,12 @@ const Navbar: FC = (): JSX.Element => {
     return <>
         <header className="nav_bar">
 
-            <div className="logo_container">
-                <figure>
-                    <img src={logo} alt="logo"/>
-                </figure>
 
-            </div>
+            <figure className="logo_fig" onClick={(): void => {
+                navigate("/")
+            }}>
+                <img src={logo} alt="logo"/>
+            </figure>
 
 
             <nav className="main_navbar">

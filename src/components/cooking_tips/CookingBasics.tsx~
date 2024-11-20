@@ -6,7 +6,7 @@ import cooking_tips_data from "../../service/const_data/cooking_tips.ts";
 
 const CookingBasics: FC = (): JSX.Element => {
 
-    const cooking_basics_elements: JSX.Element[] = cooking_tips_data.map((data: IFoodCardProps) => {
+    const cooking_basics_elements: JSX.Element[] = cooking_tips_data.map((data: IFoodCardProps): JSX.Element => {
         return <RecipeCard tips={true} recipe={true} key={data.id} data={data}/>
     })
 

@@ -5,7 +5,7 @@ import {CategoryMeal, ICategory, ICategoryMealResponse} from "../../types/data/d
 import useGetMealsByCategory from "../../hooks/service/useGetMealsByCategory.tsx";
 import Skeleton from "../ui/Skeleton.tsx";
 import LoadingContainer from "../ui/LoadingContainer.tsx";
-import {AnimatePresence} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 const Recipes: FC = (): JSX.Element => {
 

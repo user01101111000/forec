@@ -71,9 +71,10 @@
 
 ::-webkit-scrollbar {
   width: 5px;
-  background-color: var(--black-1);
+  background-color: var(--white-1);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--orange-1) !important;
+  border-radius: 32px;
 }

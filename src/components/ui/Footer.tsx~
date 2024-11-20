@@ -1,17 +1,21 @@
-import {FC} from "react";
-import logo from "../../assets/images/logo.svg";
-import {NavLink} from "react-router-dom";
+import {FC, JSX} from "react";
+import logo from "../../assets/images/logo.webp";
+import {NavigateFunction, NavLink, useNavigate} from "react-router-dom";
 import {FaGithub} from "react-icons/fa";
 import {FaLinkedin} from "react-icons/fa";
 
-const Footer: FC = () => {
+const Footer: FC = (): JSX.Element => {
+
+    const navigate: NavigateFunction = useNavigate();
 
     return <footer className="footer">
 
 
         <div className="footer_header">
 
-            <figure>
+            <figure className="logo_fig" onClick={() => {
+                navigate("/")
+            }}>
                 <img src={logo} alt="logo"/>
             </figure>
 
@@ -39,7 +43,7 @@ const Footer: FC = () => {
 
         <div className="footer_footer">
 
-            <h1>Copyright: © 2024 Cooks Delight.</h1>
+            <h1>Copyright: © 2024 Forec.</h1>
         </div>
 
 

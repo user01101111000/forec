@@ -1,4 +1,4 @@
-import {Context, createContext, FC, useState} from "react";
+import {Context, createContext, FC, JSX, useState} from "react";
 import {ETheme, TThemeContext, TThemeContextProviderProps} from "../types/context/context_types.ts";
 
 
@@ -8,7 +8,7 @@ const ThemeContext: Context<TThemeContext> = createContext<TThemeContext>({
     },
 })
 
-const ThemeContextProvider: FC<TThemeContextProviderProps> = (props: TThemeContextProviderProps) => {
+const ThemeContextProvider: FC<TThemeContextProviderProps> = (props: TThemeContextProviderProps): JSX.Element => {
 
     const current_theme: ETheme = localStorage.getItem('theme') as ETheme ?? ETheme.LIGHT;
 
@@ -16,8 +16,11 @@ const ThemeContextProvider: FC<TThemeContextProviderProps> = (props: TThemeConte
 
     function changeTheme(): void {
         setTheme((theme: ETheme): ETheme => {
-            const current_theme: ETheme = theme === ETheme.LIGHT ? ETheme.DARK : ETheme.LIGHT
-            localStorage.setItem('theme', current_theme)
+            const current_theme: ETheme = theme === ETheme.LIGHT ? ETheme.DARK : ETheme.LIGHT;
+            localStorage.setItem('theme', current_theme);
+
+            document.documentElement.setAttribute('data-theme', current_theme);
+
             return current_theme;
         })
     }

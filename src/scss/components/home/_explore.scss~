@@ -42,12 +42,12 @@
 
     h1 {
       font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     p {
       font-size: clamp(0.8rem, 1.5vw, 1.2rem);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.5;
     }
 
@@ -56,11 +56,18 @@
       text-transform: uppercase;
       background-color: transparent;
       color: var(--black-1);
-      font-weight: 500;
+      font-weight: 600;
       border: 2px solid var(--black-1);
-      padding: 0.8rem 1.5rem;
+      padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1rem, 2vw, 1.2rem);
       font-size: clamp(0.8rem, 1.5vw, 1rem);
       margin-top: clamp(1rem, 2vw, 1.5rem);
+
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: var(--black-1);
+        color: var(--white-1);
+      }
     }
 
 
@@ -80,14 +87,14 @@
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 2px solid var(--border-color);
       padding-block: 1rem;
 
-      background-color: red;
 
       h1 {
         font-size: clamp(1.2rem, 2vw, 1.6rem);
         text-transform: uppercase;
+        font-weight: 600;
         transition: all 0.3s ease-in-out;
       }
 

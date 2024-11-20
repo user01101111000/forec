@@ -5,12 +5,14 @@ import {FaCirclePlay} from "react-icons/fa6";
 import {IoMdArrowRoundForward} from "react-icons/io";
 import Skeleton from "./Skeleton.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
+import {motion} from "framer-motion";
 
 
-const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> = (props: {
+const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean, label?: string }> = (props: {
     data: IFoodCardProps,
     recipe: boolean,
     tips: boolean,
+    label?: string
 }): JSX.Element => {
 
     const navigate: NavigateFunction = useNavigate();
@@ -32,11 +34,13 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
     }, [])
 
 
-    return props.recipe ? <div className="recipe_card" onClick={(): void => {
-        if (props.tips) window.open(props.data.link!, "_blank", "noopener,noreferrer");
+    return props.recipe ? <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}
+                                      transition={{duration: 1, type: "spring"}} className="recipe_card"
+                                      onClick={(): void => {
+                                          if (props.tips) window.open(props.data.link!, "_blank", "noopener,noreferrer");
 
-        else navigate(`/detail/${props.data.id}`)
-    }}>
+                                          else navigate(`/detail/${props.data.id}`)
+                                      }}>
 
         {props.data.video &&
             <a href={props.data.video} target="_blank" className="video_area"
@@ -71,12 +75,14 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
             <div className="food_card_info_footer">
                 <p>{props.data.area}</p>
 
-                <button>view recipe</button>
+                <button>{props.label ?? "view recipe"}</button>
             </div>
         </div>
 
 
-    </div> : <div className="recipe_card_2" onClick={(): void => {
+    </motion.div> : <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}
+                                transition={{duration: 1, type: "spring"}}
+                                className="recipe_card_2" onClick={(): void => {
         navigate(`/detail/${props.data.id}`)
     }}>
 
@@ -94,7 +100,7 @@ const RecipeCard: FC<{ data: IFoodCardProps, recipe: boolean, tips: boolean }> =
         </div>
 
 
-    </div>
+    </motion.div>
 }
 
 

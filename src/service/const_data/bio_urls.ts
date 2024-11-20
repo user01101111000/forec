@@ -4,7 +4,7 @@ const image_urls: string[] = [
     "https://www.ecoleducasse.com/application/files/1616/8031/9509/Top_food_plating_techniques.png",
     "https://www.ciachef.edu/wp-content/uploads/2024/05/Student_Food_Plating-1-1-1024x897.jpg",
     "https://www.webstaurantstore.com/uploads/guide/2022/9/two-cooks-preparing-food-in-a-restaurant-kitchen.jpg",
-    "https://www.finedininglovers.com/sites/g/files/xknfdk626/files/2020-10/24_michelin_star_02_%C2%A9iStock_1.jpg",
+    "https://www.shutterstock.com/image-photo/fried-salmon-steak-cooked-green-600nw-2489026949.jpg",
     "https://www.shutterstock.com/image-photo/chef-adds-salt-prepared-classic-600nw-2040770078.jpg",
     "https://www.ecoleducasse.com/application/files/3616/8031/9510/What_is_food_plating_and_presentation.png",
 ]
